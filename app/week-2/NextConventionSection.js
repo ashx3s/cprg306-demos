@@ -1,7 +1,13 @@
 export default function NextConventionSection() {
+  const sectionTitle = "Important Conventions in NextJS";
+  const userName = "Pingu";
   return (
     <section>
-      <h2>Important Conventions in NextJS</h2>
+      <h2 className="text-2xl my-2">{sectionTitle.toUpperCase()}</h2>
+      <p className="text-blue-200 text-5xl my-5">
+        {/* This will conditionally render the message "Hello Pingu" or "Who even are you??" based on the evaluation of userName ==="Pingu" */}
+        {userName === "Pingu" ? "Hello Pingu!" : "Who even are you???"}
+      </p>
       <ul>
         <li>
           Components are named with <strong>PascalCase</strong> like{" "}
