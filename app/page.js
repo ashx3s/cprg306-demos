@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NavListItem from "./components/NavListItem";
 export default function Home() {
   // react uses JSX which is like HTML + Javascript
   // anything visual goes in the return
@@ -16,15 +17,16 @@ export default function Home() {
           </p>
         </header>
         <ul>
-          <li>
-            <strong>Week 2:</strong>
-            <br />
-            <Link href="week-2">View Page</Link>
-            <br />
-            <Link href="https://github.com/ashx3s/cprg306-demos">
-              View Code
-            </Link>
-          </li>
+          <NavListItem
+            title="Week 2"
+            pageLink="week-2"
+            repoLink="https://github.com/ashx3s/cprg306-demos"
+          />
+          <NavListItem
+            title="Week 3"
+            pageLink="week-3"
+            repoLink="https://github.com/ashx3s/cprg306-demos"
+          />
         </ul>
       </section>
     </main>
