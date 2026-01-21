@@ -1,10 +1,12 @@
+import PageHeader from "../components/PageHeader";
 export default function Page() {
+  const headerInfo = {
+    title: "Week 3",
+    description: "Creating reusable components with Props.",
+  };
   return (
     <main>
-      <header>
-        <h1>Week 3</h1>
-        <p>Making reusable components</p>
-      </header>
+      <PageHeader {...headerInfo} />
     </main>
   );
 }
