@@ -3,7 +3,7 @@
 ## Code Cleanup and Refactor Jan 23
 
 - [X] Set site navbar to be external resources
-- Create Site weekly nav on for home page
+- [X] Create Site weekly nav on for home page
 - [X] Demo Component Props once more
 - [X] Check how dark mode light mode works
-- Push to main
+- [X] Push to main
