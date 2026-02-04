@@ -1,3 +1,5 @@
+const HelloMessage = () => <p>Hello</p>;
+
 export default function Page() {
   helloWorld();
   const badHello = () => {
@@ -14,6 +16,7 @@ export default function Page() {
   // ------------------- //
   // array destructuring
   // original way
+  const numbers = [1, 2, 3, 4, 5];
   const originalOne = numbers[0];
   // destructured arrays
   const [one, ...rest] = numbers;
@@ -27,9 +30,20 @@ export default function Page() {
   };
   const { name, species } = obj;
   console.log(`Our friend ${name} is a ${species}`);
+  // --------------------- //
+  function sayHi() {
+    return alert("Hi");
+  }
   return (
     <main>
-      <h1>Week 5 Basic Interactivity</h1>
+      <header>
+        <h1>Week 5 Basic Interactivity</h1>
+        <HelloMessage />
+      </header>
+      <section>
+        <h2>Event Handlers</h2>
+        <button onClick={sayHi}>Click me</button>
+      </section>
     </main>
   );
 }
