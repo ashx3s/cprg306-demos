@@ -12,6 +12,10 @@ const navItems = [
     title: "Week 4",
     href: "week-4",
   },
+  {
+    title: "Week 5",
+    href: "week-5"
+  }
 ];
 export default function SiteNav() {
   return (
