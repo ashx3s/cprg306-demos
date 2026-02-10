@@ -4,10 +4,15 @@ import PageHeader from "@/app/components/PageHeader";
 export default function Page() {
   const [isVisible, setIsVisible] = useState(true);
   const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
 
   function formSubmit(e) {
     e.preventDefault();
-    alert(e.target[0].defaultValue);
+    const formData = new FormData(e.target);
+    const values = formData.entries();
+    for (const pair of values) {
+      console.log(`Key: ${pair[0]}`, `Value: ${pair[1]}`);
+    }
   }
 
   return (
@@ -49,17 +54,30 @@ export default function Page() {
         </header>
         <div className="flex gap-4 flex-wrap">
           <form onSubmit={formSubmit}>
-            <label htmlFor="userName" className="mr-2 p-2">
-              UserName
-            </label>
-            <input
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
-              type="text"
-              id="userName"
-              name="user-name"
-              className="outline-1 outline-amber-50 p-2"
-            />
+            <div className="my-2">
+              <label htmlFor="userName" className="mr-2 p-2">
+                UserName
+              </label>
+              <input
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
+                type="text"
+                id="userName"
+                name="user-name"
+                className="outline-1 outline-amber-50 p-2"
+              />
+            </div>
+            <div className="my-2">
+              <label htmlFor="email">Email</label>
+              <input
+                onChange={(e) => setUserEmail(e.target.value)}
+                value={userEmail}
+                type="email"
+                name="email"
+                id="email"
+                className="outline-1 outline-amber-50 p-2"
+              />
+            </div>
             <input
               type="submit"
               value="Send Alert"
