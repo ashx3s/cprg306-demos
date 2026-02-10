@@ -1,18 +1,13 @@
-import EndangeredPenguinSection from "./components/EndangeredPenguinSection";
-import FavouritePenguinSection from "./components/FavouritePenguinSection";
+import PageHeader from "./components/PageHeader";
+import SiteNav from "./components/SiteNav";
 export default function Home() {
-  // react uses JSX which is like HTML + Javascript
-  const helloMessage = "Good Morning CPRG306 Section C";
-  // anything visual goes in the return
   return (
     <main>
-      <header>
-        <h1 className="text-3xl lg:text-6xl font-bold">
-          {helloMessage.toUpperCase()}
-        </h1>
-      </header>
-      <FavouritePenguinSection />
-      <EndangeredPenguinSection />
+      <PageHeader
+        title="CPRG 306 Demo Site"
+        description="examples of weekly code"
+      />
+      <SiteNav />
     </main>
   );
 }

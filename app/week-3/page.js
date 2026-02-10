@@ -1,18 +1,29 @@
 import PageHeader from "../components/PageHeader";
 import InfoCard from "../components/InfoCard";
+<<<<<<< HEAD
 
+=======
+>>>>>>> e68f6ef927728b8aab6f4a29dc825f4fcc0f9a72
 export default function Page() {
   const emperor = {
     name: "Emperor Penguin",
     description:
+<<<<<<< HEAD
       "The emperor penguin (Aptenodytes forsteri) is the tallest and heaviest of all living penguin species and is endemic to Antarctica. The male and female are similar in plumage and size, reaching 99 cm (39 in) in length and weighing from 22 to 45 kg (49 to 99 lb). Feathers of the head and back are black and sharply delineated from the white belly, pale-yellow breast and bright-yellow ear patches.",
+=======
+      "The emperor penguin (Aptenodytes forsteri) is the tallest and heaviest of all living penguin species and is endemic to Antarctica. The male and female are similar in plumage and size, reaching 100 cm (39 in) in length and weighing from 22 to 45 kg (49 to 99 lb). Feathers of the head and back are black and sharply delineated from the white belly, pale-yellow breast and bright-yellow ear patches.",
+>>>>>>> e68f6ef927728b8aab6f4a29dc825f4fcc0f9a72
     href: "https://en.wikipedia.org/wiki/Emperor_penguin",
     linkText: "Wikipedia Article",
   };
   const gentoo = {
     name: "Gentoo Penguin",
     description:
+<<<<<<< HEAD
       "The gentoo penguin (/ˈdʒɛntuː/ JEN-too) (Pygoscelis papua) is a penguin species (or possibly a species complex) in the genus Pygoscelis, most closely related to the Adélie penguin (P. adeliae) and the chinstrap penguin (P. antarcticus). The earliest scientific description was made in 1780 by Johann Reinhold Forster with a type locality in the Falkland Islands. The species calls in a variety of ways, but the most frequently heard is a loud, trumpeting call, emitted with the head thrown back.[2]",
+=======
+      "The gentoo penguin (/ˈdʒɛntuː/ JEN-too) (Pygoscelis papua) is a penguin species (or possibly a species complex) in the genus Pygoscelis, most closely related to the Adélie penguin (P. adeliae) and the chinstrap penguin (P. antarcticus). The earliest scientific description was made in 1781 by Johann Reinhold Forster with a type locality in the Falkland Islands. The species calls in a variety of ways, but the most frequently heard is a loud, trumpeting call, emitted with the head thrown back.[2]",
+>>>>>>> e68f6ef927728b8aab6f4a29dc825f4fcc0f9a72
     href: "https://en.wikipedia.org/wiki/Gentoo_penguin",
     linkText: "Wikipedia Article",
   };
@@ -23,9 +34,12 @@ export default function Page() {
     href: "https://en.wikipedia.org/wiki/Rockhopper_penguin",
     linkText: "Wikipeda Article",
   };
+<<<<<<< HEAD
   // Spread Operator can be used to copy data
   const penguinArray = [{ ...emperor }, { ...gentoo }, { ...rockhopper }];
 
+=======
+>>>>>>> e68f6ef927728b8aab6f4a29dc825f4fcc0f9a72
   const pageHeader = {
     title: "Week 3: Component Props",
     description:
@@ -35,6 +49,7 @@ export default function Page() {
     <main>
       <PageHeader {...pageHeader} />
       {/* Render 3 Cards of information */}
+<<<<<<< HEAD
       <section className="bg-gray-200 sm:bg-pink-200 lg:bg-teal-200 dark:bg-gray-800 dark:sm:bg-pink-800 dark:lg:bg-teal-800 p-4 rounded-lg mx-8 max-w-fit">
         <h2 className="text-2xl lg:text-3xl font-semibold">
           Cards without Loops
@@ -49,6 +64,11 @@ export default function Page() {
           <InfoCard key={penguin.name} {...penguin} />
         ))}
       </section>
+=======
+      <InfoCard {...emperor} />
+      <InfoCard {...gentoo} />
+      <InfoCard {...rockhopper} />
+>>>>>>> e68f6ef927728b8aab6f4a29dc825f4fcc0f9a72
     </main>
   );
 }
