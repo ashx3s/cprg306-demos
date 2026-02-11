@@ -27,6 +27,11 @@ export default function Home() {
             pageLink="week-3"
             repoLink="https://github.com/ashx3s/cprg306-demos"
           />
+          <NavListItem
+            title="Week 6"
+            pageLink="week-6"
+            repoLink="https://github.com/ashx3s/cprg306-demos"
+          />
         </ul>
       </section>
     </main>
