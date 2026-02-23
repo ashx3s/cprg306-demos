@@ -17,13 +17,24 @@ const characterClasses = [
 ];
 
 export default function Page() {
+  const [characterName, setCharacterName] = useState("");
+  const [characterClass, setCharacterClass] = useState("Barbarian");
+  const [character, setCharacter] = useState({ name: "", class: "" });
+  function handleSubmit(e) {
+    e.preventDefault();
+    setCharacter({
+      name: characterName,
+      class: characterClass,
+    });
+    console.log(character);
+  }
   return (
     <main className="mx-6 my-8">
       <header>
         <h1 className="text-3xl">Week 6 In Class Demo</h1>
       </header>
       {/* DONE: dark mode / light mode support */}
-      <form>
+      <form onSubmit={handleSubmit}>
         {/* TODO: label connect to field */}
         <div className="m-2">
           <label htmlFor="name" className="sr-only">
@@ -32,6 +43,8 @@ export default function Page() {
           <input
             id="name"
             name="name"
+            value={characterName}
+            onChange={(e) => setCharacterName(e.target.value)}
             type="text"
             className="border-amber-50 border-2 px-2 rounded-md text-gray-600 dark:text-gray-300 text-3xl"
           />
@@ -40,7 +53,11 @@ export default function Page() {
           <label htmlFor="character-class" className="block text-xl">
             Character Class
           </label>
-          <select name="character-class" id="character-class">
+          <select
+            name="character-class"
+            id="character-class"
+            onChange={(e) => setCharacterClass(e.target.value)}
+          >
             {/* Iterate through array and generate options */}
             {characterClasses.map((cls) => (
               <option key={cls} value={cls}>
@@ -49,7 +66,20 @@ export default function Page() {
             ))}
           </select>
         </div>
+        <button type="submit" className="bg-blue-800 text-white">
+          Submit
+        </button>
       </form>
+
+      {/* TODO: Render a character on submit */}
+      <section>
+        <header>
+          <h2>Characters</h2>
+        </header>
+        {/* Generate this whole div */}
+        <p>{character.name}</p>
+        <p>{character.class}</p>
+      </section>
     </main>
   );
 }
