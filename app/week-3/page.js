@@ -1,5 +1,6 @@
 import PageHeader from "../components/PageHeader";
 import InfoCard from "../components/InfoCard";
+
 export default function Page() {
   const emperor = {
     name: "Emperor Penguin",
