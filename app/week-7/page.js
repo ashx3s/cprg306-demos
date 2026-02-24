@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Icon } from "@iconify/react";
 import { Bars3CenterLeftIcon } from "@heroicons/react/16/solid";
 
-const INITIAL_PRIMES = [2, 3, 5, 7, 11, 13];
+const INITIAL_PRIMES = [3, 5, 7, 11, 13];
 
 const isPrime = (num) => {
   if (num <= 0) return false;
@@ -20,7 +20,7 @@ const isPrime = (num) => {
 export default function Page() {
   const [primes, setPrimes] = useState(INITIAL_PRIMES);
   const [inputNumber, setInputNumber] = useState("");
-  const [formError, setFormError] = useState("Messed up bud");
+  const [formError, setFormError] = useState("");
 
   const addToPrimeList = (e) => {
     e.preventDefault();
