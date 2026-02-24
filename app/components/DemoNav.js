@@ -28,7 +28,7 @@ const navItems = [
 export default function SiteNav() {
   return (
     <ul className="my-4 mx-6 text-2xl">
-      {navLinks.map((link) => {
+      {navItems.map((link) => {
         <li
           key={link.href}
           className="my-2 bg-stone-300 dark:bg-stone-600 p-4 rounded-xl"
