@@ -18,7 +18,7 @@ export default function Page() {
   const [sortByCategory, setSortByCategory] = useState("alignment");
 
   // filter select state
-  const [filterBySpecies, setFilterBySpecies] = useState("human");
+  const [filterBySpecies, setFilterBySpecies] = useState("");
 
   // extract species for filter logic
   const species = getUniqueValues(characters, "species");
@@ -30,7 +30,16 @@ export default function Page() {
       filterBySpecies ? char.species === filterBySpecies : true,
     )
     .sort((a, b) => a[sortByCategory].localeCompare(b[sortByCategory]));
+
+  const onSelectSpecies = (e) => {
+    setFilterBySpecies(e.target.value);
+    setSortByCategory("name");
+  };
   // reset button
+  const resetSpecies = () => {
+    setFilterBySpecies("");
+    setSortByCategory("name");
+  };
   return (
     <main>
       <header>
@@ -49,7 +58,11 @@ export default function Page() {
           >
             {SORT_FIELDS.map((category) => (
               // add disabled logic for when filter by species is on to disable sort by species
-              <option key={category} value={category}>
+              <option
+                key={category}
+                value={category}
+                disabled={category === "species" && !!filterBySpecies}
+              >
                 {category}
               </option>
             ))}
@@ -58,18 +71,27 @@ export default function Page() {
         {/* filter by species: also a dropdown */}
         <div>
           <h3>Filter By Species</h3>
-          <select
-            name="sort-by-category"
-            id="sort-by-category"
-            value={filterBySpecies}
-            onChange={(e) => setFilterBySpecies(e.target.value)}
+          <div>
+            <select
+              name="sort-by-category"
+              id="sort-by-category"
+              value={filterBySpecies}
+              onChange={onSelectSpecies}
+            >
+              <option value="">all</option>
+              {species.map((species) => (
+                <option key={species} value={species}>
+                  {species}
+                </option>
+              ))}
+            </select>
+          </div>
+          <button
+            onClick={resetSpecies}
+            className="bg-red-500 px-4 py-2 rounded-md my-4"
           >
-            {species.map((species) => (
-              <option key={species} value={species}>
-                {species}
-              </option>
-            ))}
-          </select>
+            Reset
+          </button>
         </div>
         <section className="my-4">
           <h2 className="text-2xl mb-2">Character List</h2>
