@@ -1,6 +1,6 @@
 "use client";
-import Link from "next/link";
 import { useState, useEffect } from "react";
+import FetchErrorMessage from "./FetchErrorMessage";
 
 export default function Page() {
   // store data inside of state
@@ -42,17 +42,8 @@ export default function Page() {
       </div>
     );
   }
-  if (error) {
-    return (
-      <div className="bg-red-500 flex justify-center items-center p-8">
-        <h2 className="text-5xl font-bold">ERROR!</h2>
-        <p className="text-xl">{error}</p>
-        <Link href="/" className="bg-amber-600 px-4 py-2 rounded-md">
-          Take me home
-        </Link>
-      </div>
-    );
-  }
+  if (error) return FetchErrorMessage(error);
+
   if (characters.length === 0) {
     return (
       <div className="mx-8">
