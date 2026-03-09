@@ -28,7 +28,6 @@ export default function ErrorHandlingVariation() {
       setCharacters(data.data);
       setError(null);
     } catch (error) {
-      console.log(error.statusText);
       setError({
         name: error.name,
         message: error.message,

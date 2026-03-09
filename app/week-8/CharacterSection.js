@@ -22,7 +22,6 @@ export default function CharacterSection() {
       setCharacters(data.data);
       setError(null);
     } catch (error) {
-      console.log(error);
       setError(error.message);
     } finally {
       setLoading(false);
