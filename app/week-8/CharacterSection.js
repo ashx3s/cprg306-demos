@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import FetchErrorMessage from "./FetchErrorMessage";
 export default function CharacterSection() {
@@ -23,6 +22,7 @@ export default function CharacterSection() {
       setCharacters(data.data);
       setError(null);
     } catch (error) {
+      console.log(error);
       setError(error.message);
     } finally {
       setLoading(false);
@@ -35,7 +35,7 @@ export default function CharacterSection() {
 
   if (loading) return <p>Loading ...</p>;
   // if the fetch doesn't work do this...
-  if (error) return <FetchErrorMessage {...error} />;
+  if (error) return <FetchErrorMessage error={error} />;
   if (characters.length === 0) return <p>No results found</p>;
 
   // If things work out do the following
