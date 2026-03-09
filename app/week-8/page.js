@@ -15,7 +15,9 @@ export default function Page() {
     try {
       const response = await fetch("https://api.disneyapi.dev/character");
       if (!response.ok) {
-        throw new Error(`HTTP Error! Status: ${response.status}`);
+        throw new Error(
+          `HTTP Error!  ${response.status} \n ${response.message}`,
+        );
       }
       const data = await response.json();
       console.log(data.info);
