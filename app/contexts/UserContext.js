@@ -1,10 +1,6 @@
 "use client";
 import { createContext, useContext, useState } from "react";
 
-// create a context with a simulated user
-// demonstrate how to set up context api
-// code that will then be refactored to support async connection to a backend
-
 // create a context as a const
 const UserContext = createContext();
 // export the context provider which accepts a "children" prop
