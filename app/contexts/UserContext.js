@@ -26,4 +26,4 @@ export function UserProvider({ children }) {
   );
 }
 // export const
-export const useUser = () => useContext(userContext);
+export const useUser = () => useContext(UserContext);

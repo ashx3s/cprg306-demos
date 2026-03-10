@@ -9,7 +9,6 @@ export default function Page() {
   // error handling state
   const [error, setError] = useState(null);
   // Fetch Data from https://api.disneyapi.dev/character
-
   async function fetchCharacters() {
     // attempt to do this...
     try {
