@@ -1,5 +1,8 @@
+"use client";
+import { useUser } from "../contexts/UserContext";
 // import context information here
 export default function Page() {
+  const { user, toggleLogin } = useUser();
   return (
     <main>
       <header>
@@ -8,9 +11,17 @@ export default function Page() {
       <section className="my-4">
         <h2 className="text-xl">
           Show the user name on toggle of login status:{" "}
-          <span className="font-bold text-pink-500">Name</span>
+          <span className="font-bold text-pink-500">
+            {user.loggedIn
+              ? `${user.name} is Logged In`
+              : `${user.name} Logged out`}
+          </span>
         </h2>
-        <button className="bg-blue-500 px-4 py-2 rounded-md my-2 cursor-pointer hover:bg-blue-700">
+        {user.loggedIn && <p>{user.bio}</p>}
+        <button
+          onClick={toggleLogin}
+          className="bg-blue-500 px-4 py-2 rounded-md my-2 cursor-pointer hover:bg-blue-700"
+        >
           Toggle Login Status
         </button>
       </section>

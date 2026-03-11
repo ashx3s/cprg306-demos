@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { UserProvider } from "./contexts/UserContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,11 +24,12 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* TODO: ADD CONTEXT AROUND THE CHILDREN PROP */}
-
-        {/* Site Header Here */}
-        {/* Side menu that's always available */}
-        {children}
-        {/* Site footer */}
+        <UserProvider>
+          {/* Site Header Here */}
+          {/* Side menu that's always available */}
+          {children}
+          {/* Site footer */}
+        </UserProvider>
       </body>
     </html>
   );
