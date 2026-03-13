@@ -1,5 +1,7 @@
 "use client";
 import { useUser } from "../contexts/UserContext";
+import AuthSection from "./AuthSection";
+
 export default function Page() {
   const { user, toggleUserLogin } = useUser();
   return (
@@ -20,6 +22,7 @@ export default function Page() {
           Toggle Login User
         </button>
       </section>
+      <AuthSection />
     </main>
   );
 }
