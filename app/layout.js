@@ -1,6 +1,7 @@
 import SiteHeader from "./components/SiteHeader";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from "./contexts/AuthContext";
 import { UserProvider } from "./contexts/UserContext";
 
 const geistSans = Geist({
@@ -24,11 +25,13 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* Make our user avaialbe everwhere */}
-        <UserProvider>
-          <SiteHeader />
-          {children}
-        </UserProvider>
+        <AuthProvider>
+          {/* Make our user avaialbe everwhere */}
+          <UserProvider>
+            <SiteHeader />
+            {children}
+          </UserProvider>
+        </AuthProvider>
       </body>
     </html>
   );

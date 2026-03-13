@@ -2,7 +2,6 @@ import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 // import analytics
 import { getAnalytics } from "firebase/analytics";
-
 // set up the configuration for env variables to connect the app to the backend
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
@@ -14,5 +13,12 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
 };
 
-// initialize a connection with the firebase app
-// export app, analytics, authentication
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+
+let analytics;
+if (typeof window !== "undefined") {
+  analytics = getAnalytics(app);
+}
+const auth = getAuth(app);
+
+export { app, analytics, auth };

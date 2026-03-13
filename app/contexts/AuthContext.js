@@ -1,32 +1,42 @@
 "use client";
 import { createContext, useContext, useState, useEffect } from "react";
-
-// get firebase authentication library -> onAuthStateChanged
-// import firebase config info
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../firebase/config";
 
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [authUser, setAuthUser] = useState(null);
-  // TODO: Set to false and only toggle on during the loading
   const [loading, setLoading] = useState(true);
 
-  // perform the connection to the backend in a useEffect
   useEffect(() => {
-    // run onAuthStateChanged from the firebase library
-    // us auth, and user as arguments
-    // if user then log authenticated
-    // else log no user found
-    // set the authUser variable to our user from the backend
-    // set loading false
-    // log that we've logged in
-    // if an error, log the error and set loading false
-    // run unsubscribe in the return
+    const unsubscribe = onAuthStateChanged(
+      auth,
+      (user) => {
+        if (user) {
+          console.log("User Authenticated: ", user.email);
+        } else {
+          console.log("No User Found");
+        }
+        setAuthUser(user);
+        setLoading(false);
+        console.log("loading complete");
+      },
+      (error) => {
+        console.error("Auth error", error);
+        setAuthUser(null);
+        setLoading(false);
+      },
+    );
+    return () => {
+      console.log("Cleaning up listener");
+      unsubscribe();
+    };
   }, []);
 
   // pass values to the provider
   return (
-    <AuthContext.Provider values={{ authUser, loading }}>
+    <AuthContext.Provider value={{ authUser, loading }}>
       {children}
     </AuthContext.Provider>
   );
@@ -37,7 +47,7 @@ export function useAuth() {
   const context = useContext(AuthContext);
   if (context === undefined) {
     throw new Error(
-      "Context Error: useAuth must be used wtihin the Auth Provider",
+      "Context Error: useAuth must be used within the Auth Provider",
     );
   }
   return context;
