@@ -1,8 +1,9 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-// import analytics
+import { getFirestore } from "firebase/firestore";
+
 import { getAnalytics } from "firebase/analytics";
-// set up the configuration for env variables to connect the app to the backend
+
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -20,5 +21,6 @@ if (typeof window !== "undefined") {
   analytics = getAnalytics(app);
 }
 const auth = getAuth(app);
+const db = getFirestore(app);
 
-export { app, analytics, auth };
+export { app, analytics, auth, db };
