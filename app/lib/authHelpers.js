@@ -26,7 +26,7 @@ export async function logout() {
   try {
     await firebaseSignOut(auth);
     return { error: null };
-  } catch (rerror) {
+  } catch (error) {
     return { error: error.message };
   }
 }
