@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { UserProvider } from "./contexts/UserContext";
-
+import { AuthProvider } from "./contexts/AuthContext";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -23,13 +23,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* TODO: ADD CONTEXT AROUND THE CHILDREN PROP */}
-        <UserProvider>
-          {/* Site Header Here */}
-          {/* Side menu that's always available */}
-          {children}
-          {/* Site footer */}
-        </UserProvider>
+        <AuthProvider>
+          <UserProvider>
+            {/* Site Header Here */}
+            {/* Side menu that's always available */}
+            {children}
+            {/* Site footer */}
+          </UserProvider>
+        </AuthProvider>
       </body>
     </html>
   );
