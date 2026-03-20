@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { onSnapshot, collection } from "firebase/firestore";
-import { db } from "@/app/firebase/config";
+import { db } from "@/app/lib/firebase/config";
 
 export function useFirestoreCollection(collectionName = "blog_posts") {
   const [data, setData] = useState([]);

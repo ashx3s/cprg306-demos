@@ -1,9 +1,14 @@
 "use client";
 
-// import useStatee, useAuth, useFirestoreCollection hook
+// import useState, useAuth, useFirestoreCollection hook
+import { useState } from "react";
+import { useAuth } from "../contexts/AuthContext";
+import { useFirestoreCollection } from "../hooks/useFirstoreCollection";
 // import controller functions addItem and getItems
 
 export default function Page() {
+  const { data: items, isLoading, error } = useFirestoreCollection();
+  console.log(items);
   return (
     <main>
       <header>
