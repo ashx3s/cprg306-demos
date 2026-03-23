@@ -3,7 +3,7 @@ import {
   signInWithEmailAndPassword,
   signOut as firebaseSignOut,
 } from "firebase/auth";
-import { auth } from "../firebase/config";
+import { auth } from "./firebase/config";
 
 // TODO: Review naming conventions for helperfunctions for final push
 export async function signUpWithEmailAndPassword(email, password) {

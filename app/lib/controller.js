@@ -10,7 +10,8 @@ export const addItem = async (collectionName = "blog_posts", data) => {
   try {
     await addDoc(collection(db, collectionName), data);
   } catch (err) {
-    console.error(`Error adding ${data} to ${collection}`);
+    console.error(`Error adding item to ${collectionName}`, err);
+    throw err;
   }
 };
 
