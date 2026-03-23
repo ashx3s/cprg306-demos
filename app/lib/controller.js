@@ -8,7 +8,7 @@ export const addItem = async (collectionName, data) => {
   try {
     const docRef = await addDoc(collection(db, collectionName), data);
     console.log("Document written with ID: ", docRef.id);
-    // return docRef.id;
+    return docRef.id;
   } catch (error) {
     console.error("Error adding document: ", error);
   }
@@ -17,7 +17,7 @@ export const addItem = async (collectionName, data) => {
 // get all items logic
 export const getItems = async (collectionName) => {
   try {
-    const querySnapshot = await getDocs(collection, db, collectionName);
+    const querySnapshot = await getDocs(collection(db, collectionName));
     return querySnapshot.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),

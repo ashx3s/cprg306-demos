@@ -1,5 +1,6 @@
 "use client";
 import { useUser } from "../contexts/UserContext";
+import { useAuth } from "../contexts/AuthContext";
 import AuthSection from "./AuthSection";
 
 export default function Page() {
@@ -12,7 +13,7 @@ export default function Page() {
       <section>
         {/* If user is logged in, show name, otherwise show logged Out */}
         <h2 className="text-2xl my-4">
-          {user.loggedIn ? user.name : "Nobody is logged in"}
+          Static: {user.loggedIn ? user.name : "Nobody is logged in"}
         </h2>
 
         <button

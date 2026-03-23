@@ -21,6 +21,18 @@ export async function signUpWithEmailAndPassword(email, password) {
     return { user: null, error: error.message };
   }
 }
+export async function signInWithEmail(email, password) {
+  try {
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password,
+    );
+    return { user: userCredential.user, error: null };
+  } catch (error) {
+    return { user: null, error: error.message };
+  }
+}
 
 export async function logout() {
   try {
