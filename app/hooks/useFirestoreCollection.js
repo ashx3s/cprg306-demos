@@ -13,8 +13,8 @@ export function useFirestoreCollection(collectionName = "characters") {
       collection(db, collectionName),
       (snapshot) => {
         const items = snapshot.docs.map((doc) => ({
-          id: doc.id,
           ...doc.data(),
+          id: doc.id,
         }));
         setData(items);
         setIsDataLoading(false);

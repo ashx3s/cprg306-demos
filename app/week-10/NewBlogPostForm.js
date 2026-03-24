@@ -18,7 +18,7 @@ export default function NewBlogPostForm() {
     e.preventDefault();
     if (!formData.title.trim()) return;
     if (loading || !authUser) return;
-    const data = { ...formData, id: authUser.uid };
+    const data = { ...formData, userid: authUser.uid };
     try {
       await addItem("blog_posts", data);
     } catch (error) {
