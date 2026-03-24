@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { useFirestoreCollection } from "../hooks/useFirestoreCollection";
 
 export default function BlogPostSection() {
@@ -8,7 +8,7 @@ export default function BlogPostSection() {
     isDataLoading,
     dataError,
   } = useFirestoreCollection("blog_posts");
-
+  console.log(items);
   if (isDataLoading) {
     return (
       <section>
@@ -31,7 +31,11 @@ export default function BlogPostSection() {
         {items.map((item) => {
           return (
             <article key={item.id}>
-              <h3>{item.title}</h3>
+              <h3>
+                <Link href={`/week-10/${item.id}`} className="hover:underline">
+                  {item.title}
+                </Link>
+              </h3>
             </article>
           );
         })}
