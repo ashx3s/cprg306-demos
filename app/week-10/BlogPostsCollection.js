@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useFirestoreCollection } from "../hooks/useFirestoreCollection";
 
 export default function BlogPostCollection() {
@@ -23,12 +24,11 @@ export default function BlogPostCollection() {
           }
           return (
             <article key={item.id}>
-              <h3>{item.title}</h3>
+              <h3>
+                <Link href={`/week-10/${item.id}`}>{item.title}</Link>
+              </h3>
             </article>
           );
-          {
-            /* render each title */
-          }
         })
       )}
     </section>
