@@ -13,7 +13,7 @@ export default function Page() {
     if (!loading && !authUser) {
       router.push("/week-9");
     }
-  });
+  }, []);
   // if loading, return that it's loading / verifying authentication
   if (loading) {
     return <div>Verifying Authentication...</div>;
