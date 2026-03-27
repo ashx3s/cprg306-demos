@@ -9,7 +9,7 @@ export default function Page() {
   // if auth is not loading and there is no authUser, send the user to week-9
   useEffect(() => {
     if (!loading && !authUser) {
-      router.push("/week-9");
+      // router.push("/week-9");
     }
   });
 

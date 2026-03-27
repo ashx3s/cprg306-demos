@@ -29,3 +29,7 @@ export const getItems = async (collectionName) => {
 // get item logic
 
 // ... update and delete as second phase
+
+export const updateItem = async () => {};
+
+export const deleteItem = () => {};
