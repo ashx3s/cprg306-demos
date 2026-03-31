@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Duchess",
+    "species": "cat",
+    "breed": "Turkish Angora",
+    "color": "white",
+    "role": "protagonist",
+    "alignment": "good",
+    "notes": "Refined, loving mother of three kittens"
+  },
+  {
+    "name": "Thomas O'Malley",
+    "species": "cat",
+    "breed": "domestic shorthair",
+    "color": "orange tabby",
+    "role": "protagonist",
+    "alignment": "good",
+    "notes": "Street-smart alley cat, protective and charming"
+  },
+  {
+    "name": "Marie",
+    "species": "cat",
+    "breed": "Turkish Angora",
+    "color": "white",
+    "role": "protagonist",
+    "alignment": "good",
+    "notes": "Eldest kitten, prim and proper, aspiring lady"
+  },
+  {
+    "name": "Toulouse",
+    "species": "cat",
+    "breed": "Turkish Angora",
+    "color": "orange",
+    "role": "protagonist",
+    "alignment": "good",
+    "notes": "Middle kitten, aspiring artist, bold and scrappy"
+  },
+  {
+    "name": "Berlioz",
+    "species": "cat",
+    "breed": "Turkish Angora",
+    "color": "grey",
+    "role": "protagonist",
+    "alignment": "good",
+    "notes": "Youngest kitten, musical, shy but playful"
+  },
+  {
+    "name": "Edgar Balthazar",
+    "species": "human",
+    "role": "antagonist",
+    "alignment": "bad",
+    "notes": "Greedy butler who schemes to inherit Madame's fortune by abandoning the cats"
+  },
+  {
+    "name": "Madame Adelaide Bonfamille",
+    "species": "human",
+    "role": "supporting",
+    "alignment": "good",
+    "notes": "Wealthy, kind owner of Duchess and the kittens; leaves her fortune to the cats"
+  },
+  {
+    "name": "Roquefort",
+    "species": "mouse",
+    "role": "supporting",
+    "alignment": "good",
+    "notes": "Loyal, brave house mouse and friend of the cats"
+  },
+  {
+    "name": "Scat Cat",
+    "species": "cat",
+    "breed": "domestic shorthair",
+    "color": "orange",
+    "role": "supporting",
+    "alignment": "good",
+    "notes": "Leader of the jazz alley cat band, O'Malley's old friend"
+  },
+  {
+    "name": "Napoleon",
+    "species": "dog",
+    "breed": "bloodhound",
+    "role": "minor",
+    "alignment": "neutral",
+    "notes": "Country dog, self-appointed guard; causes trouble for Edgar unintentionally"
+  },
+  {
+    "name": "Lafayette",
+    "species": "dog",
+    "breed": "basset hound",
+    "role": "minor",
+    "alignment": "neutral",
+    "notes": "Napoleon's smaller companion, easily distracted"
+  },
+  {
+    "name": "Frou-Frou",
+    "species": "horse",
+    "role": "minor",
+    "alignment": "good",
+    "notes": "Madame's horse, helps Roquefort and is sympathetic to the cats"
+  },
+  {
+    "name": "Georges Hautecourt",
+    "species": "human",
+    "role": "minor",
+    "alignment": "good",
+    "notes": "Madame's elderly lawyer who draws up the will leaving everything to the cats"
+  }
+]
